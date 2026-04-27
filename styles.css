@@ -1,3 +1,49 @@
-p {
-    color:blue;
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: grid;
+    grid-template-columns: 1fr 1rem;
+    grid-template-rows: 5rem 1fr;
+    row-gap: 1rem;
+    padding: 1rem 0 1rem 1rem;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.header,
+.books {
+    outline: solid black 2px;
+}
+
+.header {
+    display: grid;
+    align-items: center;
+    padding: 1rem;
+    min-width: 12rem;
+}
+
+.books {
+    /* margin: 0 1rem 1rem 1rem; */
 }
