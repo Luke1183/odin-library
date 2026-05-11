@@ -1,4 +1,23 @@
-const myLibrary = [];
+const myLibrary = [
+  {
+    id: 0,
+    title: "The Fellowship of the Ring",
+    author: "JRR Tolkien",
+    genre: "High Fantasy",
+  },
+  {
+    id: 1,
+    title: "Oblivion March",
+    author: "Luke Noorda",
+    genre: "Science Fiction",
+  },
+  {
+    id: 2,
+    title: "Winnie the Pooh",
+    author: "Christopher Something",
+    genre: "Children's Literature",
+  },
+];
 
 function Book(title, author, genre) {
   if (!new.target) {
@@ -15,3 +34,31 @@ function addBookToLibrary(title, author, genre) {
   myLibrary.push(book);
   return;
 }
+
+function displayBooks(books) {
+  let n = books.length;
+  for (let i = 0; i < n; i++) {
+    let bookCard = document.createElement("div");
+    booksSection.appendChild(bookCard);
+    bookCard.style.outline = "solid black 1px";
+
+    let bookCardID = document.createElement("div");
+    bookCard.appendChild(bookCardID);
+    bookCardID.textContent = `${myLibrary[i].id}`;
+
+    let bookCardTitle = document.createElement("div");
+    bookCard.appendChild(bookCardTitle);
+    bookCardTitle.textContent = `${myLibrary[i].title}`;
+
+    let bookCardAuthor = document.createElement("div");
+    bookCard.appendChild(bookCardAuthor);
+    bookCardAuthor.textContent = `${myLibrary[i].author}`;
+
+    let bookCardGenre = document.createElement("div");
+    bookCard.appendChild(bookCardGenre);
+    bookCardGenre.textContent = `${myLibrary[i].genre}`;
+  }
+}
+
+const booksSection = document.querySelector("#books");
+displayBooks(myLibrary);

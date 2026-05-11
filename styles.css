@@ -33,7 +33,7 @@ body {
 }
 
 .header,
-.books {
+#books {
     outline: solid black 2px;
 }
 
@@ -44,6 +44,10 @@ body {
     min-width: 12rem;
 }
 
-.books {
-    /* margin: 0 1rem 1rem 1rem; */
+#books {
+    display: grid;
+    gap: 3rem;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 }
