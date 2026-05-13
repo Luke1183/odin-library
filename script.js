@@ -40,7 +40,9 @@ function displayBooks(books) {
   for (let i = 0; i < n; i++) {
     let bookCard = document.createElement("div");
     booksSection.appendChild(bookCard);
-    bookCard.style.outline = "solid black 1px";
+    bookCard.style.outline = "solid black 2px";
+    bookCard.style.padding = "0.5rem";
+    bookCard.style.backgroundColor = "white";
 
     let bookCardID = document.createElement("div");
     bookCard.appendChild(bookCardID);
