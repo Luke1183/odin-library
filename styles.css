@@ -40,9 +40,37 @@ body {
 
 .header {
     display: grid;
+    grid-template-columns: 12rem 1fr 7rem 7rem;
     align-items: center;
-    padding: 1rem;
-    min-width: 12rem;
+    padding: 1.2rem;
+    gap: 1.2rem;
+    min-width: 32rem;
+}
+
+#new-book,
+#remove-all {
+    height: 2.5rem;
+    border: solid black 2px;
+}
+
+#new-book {
+    background-color: rgb(193, 239, 255);
+    grid-column-start: 3;
+}
+
+#remove-all {
+    background-color: rgb(255, 172, 172);
+    grid-column-start: 4;
+}
+
+#new-book:hover {
+    background-color: rgb(144, 227, 255);
+    cursor: pointer;
+}
+
+#remove-all:hover {
+    background-color: rgb(255, 136, 136);
+    cursor: pointer;
 }
 
 #books {

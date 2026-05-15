@@ -4,18 +4,21 @@ const myLibrary = [
     title: "The Fellowship of the Ring",
     author: "JRR Tolkien",
     genre: "High Fantasy",
+    status: "unread",
   },
   {
     id: 1,
     title: "Oblivion March",
     author: "Luke Noorda",
     genre: "Science Fiction",
+    status: "read",
   },
   {
     id: 2,
     title: "Winnie the Pooh",
     author: "Christopher Something",
     genre: "Children's Literature",
+    status: "read",
   },
 ];
 
@@ -27,6 +30,7 @@ function Book(title, author, genre) {
   this.title = title;
   this.author = author;
   this.genre = genre;
+  this.status = "unread";
 }
 
 function addBookToLibrary(title, author, genre) {
@@ -43,6 +47,8 @@ function displayBooks(books) {
     bookCard.style.outline = "solid black 2px";
     bookCard.style.padding = "0.5rem";
     bookCard.style.backgroundColor = "white";
+    bookCard.style.display = "grid";
+    bookCard.style.gap = "0.5rem";
 
     let bookCardID = document.createElement("div");
     bookCard.appendChild(bookCardID);
@@ -59,6 +65,10 @@ function displayBooks(books) {
     let bookCardGenre = document.createElement("div");
     bookCard.appendChild(bookCardGenre);
     bookCardGenre.textContent = `${myLibrary[i].genre}`;
+
+    let bookCardStatus = document.createElement("div");
+    bookCard.appendChild(bookCardStatus);
+    bookCardStatus.textContent = `${myLibrary[i].status}`;
   }
 }
 
