@@ -39,6 +39,12 @@ function addBookToLibrary(title, author, genre) {
   return;
 }
 
+function removeBooks() {
+  while (booksSection.firstChild) {
+    booksSection.removeChild(booksSection.firstChild);
+  }
+}
+
 function displayBooks(books) {
   let n = books.length;
   for (let i = 0; i < n; i++) {
@@ -74,3 +80,29 @@ function displayBooks(books) {
 
 const booksSection = document.querySelector("#books");
 displayBooks(myLibrary);
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+  const data = new FormData(form);
+  let bookTitle = data.get("book_title");
+  let bookAuthor = data.get("book_author");
+  let bookGenre = data.get("book_genre");
+
+  if (bookGenre == "sci_fi") {
+    bookGenre = "Science Fiction";
+  } else if (bookGenre == "high_fantasy") {
+    bookGenre = "High Fantasy";
+  } else if (bookGenre == "childrens_literature") {
+    bookGenre = "Children's Literature";
+  } else {
+    bookGenre = "Unclear";
+  }
+
+  addBookToLibrary(bookTitle, bookAuthor, bookGenre);
+
+  removeBooks();
+  displayBooks(myLibrary);
+
+  event.preventDefault();
+});
