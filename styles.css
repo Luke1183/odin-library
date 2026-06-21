@@ -47,13 +47,13 @@ body {
     min-width: 32rem;
 }
 
-#new-book,
+#add-book,
 #remove-all {
     height: 2.5rem;
     border: solid black 2px;
 }
 
-#new-book {
+#add-book {
     background-color: rgb(193, 239, 255);
     grid-column-start: 3;
 }
@@ -63,7 +63,7 @@ body {
     grid-column-start: 4;
 }
 
-#new-book:hover {
+#add-book:hover {
     background-color: rgb(144, 227, 255);
     cursor: pointer;
 }

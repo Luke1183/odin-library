@@ -1,3 +1,13 @@
+const booksSection = document.querySelector("#books");
+
+const form = document.querySelector("form");
+
+const dialog = document.getElementById("add-book-dialog");
+
+const addBookButton = document.getElementById("add-book");
+
+const confirmBookButton = dialog.querySelector("#confirm-book");
+
 const myLibrary = [
   {
     id: 0,
@@ -78,31 +88,38 @@ function displayBooks(books) {
   }
 }
 
-const booksSection = document.querySelector("#books");
-displayBooks(myLibrary);
+dialog.addEventListener("close", () => {
+  if (dialog.returnValue === "confirm") {
+    const data = new FormData(form);
+    let bookTitle = data.get("book_title");
+    let bookAuthor = data.get("book_author");
+    let bookGenre = data.get("book_genre");
 
-const form = document.querySelector("form");
+    if (bookGenre == "sci_fi") {
+      bookGenre = "Science Fiction";
+    } else if (bookGenre == "high_fantasy") {
+      bookGenre = "High Fantasy";
+    } else if (bookGenre == "childrens_literature") {
+      bookGenre = "Children's Literature";
+    } else {
+      bookGenre = "Unclear";
+    }
 
-form.addEventListener("submit", (event) => {
-  const data = new FormData(form);
-  let bookTitle = data.get("book_title");
-  let bookAuthor = data.get("book_author");
-  let bookGenre = data.get("book_genre");
+    addBookToLibrary(bookTitle, bookAuthor, bookGenre);
 
-  if (bookGenre == "sci_fi") {
-    bookGenre = "Science Fiction";
-  } else if (bookGenre == "high_fantasy") {
-    bookGenre = "High Fantasy";
-  } else if (bookGenre == "childrens_literature") {
-    bookGenre = "Children's Literature";
-  } else {
-    bookGenre = "Unclear";
+    removeBooks();
+    displayBooks(myLibrary);
+    console.log(dialog.returnValue);
+  }
+  if (dialog.returnValue === "cancel") {
+    console.log(dialog.returnValue);
   }
 
-  addBookToLibrary(bookTitle, bookAuthor, bookGenre);
-
-  removeBooks();
-  displayBooks(myLibrary);
-
-  event.preventDefault();
+  form.reset();
 });
+
+addBookButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+displayBooks(myLibrary);

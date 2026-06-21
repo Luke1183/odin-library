@@ -10,43 +10,43 @@
 <body>
     <div class="header">
         <h1>My Library</h1>
-        <button id="new-book" popovertarget="add-book-form">Add book</button>
+        <button id="add-book">Add book</button>
         <button id="remove-all">Remove all</button>
     </div>
     <div class="right-margin"></div>
+    <dialog id="add-book-dialog">
+        <form method="dialog">
+            <div>
+                <label for="book_title">Title:</label>
+                <input type="text" id="book_title" placeholder="Winnie the Pooh" name="book_title">
+            </div>
+            <div>
+                <label for="book_author">Author:</label>
+                <input type="text" id="book_author" placeholder="Christopher Something" name="book_author">
+            </div>
+            <div>
+                <input type="radio" id="sci_fi" name="book_genre" value="sci_fi">
+                <label for="sci_fi">Science Fiction</label>
+            </div>
+            <div>
+                <input type="radio" id="high_fantasy" name="book_genre" value="high_fantasy">
+                <label for="high_fantasy">High Fantasy</label>
+            </div>
+            <div>
+                <input type="radio" id="childrens_literature" name="book_genre" value="childrens_literature">
+                <label for="childrens_literature">Children's Literature</label>
+            </div>
+            <div>
+                <input type="radio" id="unclear_genre" name="book_genre" value="unclear_genre" checked>
+                <label for="unclear_genre">Unclear</label>
+            </div>
+            <div>
+                <button id="confirm-book" type="submit" value="confirm">Add book</button>
+                <button id="cancel-book" type="submit" value="cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
     <div id="books">
-        <dialog id="add-book-form" popover>
-            <button popovertarget="add-book-form" popovertargetaction="hide">Close</button>
-            <form action="" method="GET">
-                <div>
-                    <label for="book_title">Title:</label>
-                    <input type="text" id="book_title" placeholder="Winnie the Pooh" name="book_title">
-                </div>
-                <div>
-                    <label for="book_author">Author:</label>
-                    <input type="text" id="book_author" placeholder="Christopher Something" name="book_author">
-                </div>
-                <div>
-                    <input type="radio" id="sci_fi" name="book_genre" value="sci_fi">
-                    <label for="sci_fi">Science Fiction</label>
-                </div>
-                <div>
-                    <input type="radio" id="high_fantasy" name="book_genre" value="high_fantasy">
-                    <label for="high_fantasy">High Fantasy</label>
-                </div>
-                <div>
-                    <input type="radio" id="childrens_literature" name="book_genre" value="childrens_literature">
-                    <label for="childrens_literature">Children's Literature</label>
-                </div>
-                <div>
-                    <input type="radio" id="unclear_genre" name="book_genre" value="unclear_genre" checked>
-                    <label for="unclear_genre">Unclear</label>
-                </div>
-                <div>
-                    <button id="add-book-form-button" type="submit">Add book</button>
-                </div>
-            </form>
-        </dialog>
     </div>
 </body>
 </html>
