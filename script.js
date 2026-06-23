@@ -43,6 +43,12 @@ function Book(title, author, genre) {
   this.status = "unread";
 }
 
+function removeBook(i) {
+  myLibrary.splice(i, 1);
+  removeBooks();
+  displayBooks(myLibrary);
+}
+
 function addBookToLibrary(title, author, genre) {
   book = new Book(title, author, genre);
   myLibrary.push(book);
@@ -85,6 +91,14 @@ function displayBooks(books) {
     let bookCardStatus = document.createElement("div");
     bookCard.appendChild(bookCardStatus);
     bookCardStatus.textContent = `${myLibrary[i].status}`;
+
+    let bookCardRemove = document.createElement("button");
+    bookCard.appendChild(bookCardRemove);
+    bookCardRemove.textContent = "Remove";
+    bookCardRemove.setAttribute("removeindex", i);
+    bookCardRemove.addEventListener("click", function () {
+      removeBook(i);
+    });
   }
 }
 
