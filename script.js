@@ -61,6 +61,16 @@ function removeBooks() {
   }
 }
 
+function toggleRead(index) {
+  if (myLibrary[index].status === "read") {
+    myLibrary[index].status = "unread";
+  } else {
+    myLibrary[index].status = "read";
+  }
+  removeBooks();
+  displayBooks(myLibrary);
+}
+
 function displayBooks(books) {
   let n = books.length;
   for (let i = 0; i < n; i++) {
@@ -98,6 +108,13 @@ function displayBooks(books) {
     bookCardRemove.setAttribute("removeindex", i);
     bookCardRemove.addEventListener("click", function () {
       removeBook(i);
+    });
+
+    let toggleReadStatus = document.createElement("button");
+    bookCard.appendChild(toggleReadStatus);
+    toggleReadStatus.textContent = "Read";
+    toggleReadStatus.addEventListener("click", function () {
+      toggleRead(i);
     });
   }
 }
