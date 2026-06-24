@@ -48,7 +48,9 @@ body {
 }
 
 #add-book,
-#remove-all {
+#remove-all,
+#confirm-book,
+#cancel-book {
     height: 2.5rem;
     border: solid black 2px;
 }
@@ -63,12 +65,31 @@ body {
     grid-column-start: 4;
 }
 
+#confirm-book {
+    background-color: rgb(174, 255, 139);
+}
+
+#cancel-book {
+    background-color: rgb(255, 172, 172);
+    grid-column-start: 3;
+}
+
 #add-book:hover {
     background-color: rgb(144, 227, 255);
     cursor: pointer;
 }
 
 #remove-all:hover {
+    background-color: rgb(255, 136, 136);
+    cursor: pointer;
+}
+
+#confirm-book:hover {
+    background-color: rgb(136, 255, 85);
+    cursor: pointer;
+}
+
+#cancel-book:hover {
     background-color: rgb(255, 136, 136);
     cursor: pointer;
 }
@@ -80,4 +101,29 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
     grid-template-rows: min-content;
     grid-auto-rows: min-content;
+}
+
+dialog {
+    border: none;
+    outline: solid black 2px;
+}
+
+dialog::backdrop {
+    background: rgb(0 0 0 / 50%);
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+#form_buttons_section {
+    display: grid;
+    grid-template-columns: 7rem 1fr 7rem;
+}
+
+.form_text_label {
+    display: inline-block;
+    min-width: 4rem;
+    text-align: right;
 }

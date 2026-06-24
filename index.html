@@ -17,11 +17,11 @@
     <dialog id="add-book-dialog">
         <form method="dialog">
             <div>
-                <label for="book_title">Title:</label>
+                <label class="form_text_label" for="book_title">Title:</label>
                 <input type="text" id="book_title" placeholder="Winnie the Pooh" name="book_title">
             </div>
             <div>
-                <label for="book_author">Author:</label>
+                <label class="form_text_label" for="book_author">Author:</label>
                 <input type="text" id="book_author" placeholder="Christopher Something" name="book_author">
             </div>
             <div>
@@ -40,7 +40,7 @@
                 <input type="radio" id="unclear_genre" name="book_genre" value="unclear_genre" checked>
                 <label for="unclear_genre">Unclear</label>
             </div>
-            <div>
+            <div id="form_buttons_section">
                 <button id="confirm-book" type="submit" value="confirm">Add book</button>
                 <button id="cancel-book" type="submit" value="cancel">Cancel</button>
             </div>

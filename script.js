@@ -82,10 +82,6 @@ function displayBooks(books) {
     bookCard.style.display = "grid";
     bookCard.style.gap = "0.5rem";
 
-    let bookCardID = document.createElement("div");
-    bookCard.appendChild(bookCardID);
-    bookCardID.textContent = `${myLibrary[i].id}`;
-
     let bookCardTitle = document.createElement("div");
     bookCard.appendChild(bookCardTitle);
     bookCardTitle.textContent = `${myLibrary[i].title}`;
