@@ -81,36 +81,70 @@ function displayBooks(books) {
     bookCard.style.backgroundColor = "white";
     bookCard.style.display = "grid";
     bookCard.style.gap = "0.5rem";
+    // bookCard.style.gridTemplateRows = "1fr";
+
+    let bookCardText = document.createElement("div");
+    bookCard.appendChild(bookCardText);
+    bookCardText.setAttribute("class", "book-card-text");
+
+    let bookCardTitleLabel = document.createElement("div");
+    bookCardText.appendChild(bookCardTitleLabel);
+    bookCardTitleLabel.textContent = "Title:";
+    bookCardTitleLabel.setAttribute("class", "book-card-text-labels");
 
     let bookCardTitle = document.createElement("div");
-    bookCard.appendChild(bookCardTitle);
+    bookCardText.appendChild(bookCardTitle);
     bookCardTitle.textContent = `${myLibrary[i].title}`;
+    bookCardTitle.setAttribute("class", "book-card-text-content");
+
+    let bookCardAuthorLabel = document.createElement("div");
+    bookCardText.appendChild(bookCardAuthorLabel);
+    bookCardAuthorLabel.textContent = "Author:";
+    bookCardAuthorLabel.setAttribute("class", "book-card-text-labels");
 
     let bookCardAuthor = document.createElement("div");
-    bookCard.appendChild(bookCardAuthor);
+    bookCardText.appendChild(bookCardAuthor);
     bookCardAuthor.textContent = `${myLibrary[i].author}`;
+    bookCardAuthor.setAttribute("class", "book-card-text-content");
+
+    let bookCardGenreLabel = document.createElement("div");
+    bookCardText.appendChild(bookCardGenreLabel);
+    bookCardGenreLabel.textContent = "Genre:";
+    bookCardGenreLabel.setAttribute("class", "book-card-text-labels");
 
     let bookCardGenre = document.createElement("div");
-    bookCard.appendChild(bookCardGenre);
+    bookCardText.appendChild(bookCardGenre);
     bookCardGenre.textContent = `${myLibrary[i].genre}`;
+    bookCardGenre.setAttribute("class", "book-card-text-content");
+
+    let bookCardStatusLabel = document.createElement("div");
+    bookCardText.appendChild(bookCardStatusLabel);
+    bookCardStatusLabel.textContent = "Status:";
+    bookCardStatusLabel.setAttribute("class", "book-card-text-labels");
 
     let bookCardStatus = document.createElement("div");
-    bookCard.appendChild(bookCardStatus);
+    bookCardText.appendChild(bookCardStatus);
     bookCardStatus.textContent = `${myLibrary[i].status}`;
+    bookCardStatus.setAttribute("class", "book-card-text-content");
 
-    let bookCardRemove = document.createElement("button");
-    bookCard.appendChild(bookCardRemove);
-    bookCardRemove.textContent = "Remove";
-    bookCardRemove.setAttribute("removeindex", i);
-    bookCardRemove.addEventListener("click", function () {
-      removeBook(i);
-    });
+    let bookCardButtons = document.createElement("div");
+    bookCard.appendChild(bookCardButtons);
+    bookCardButtons.setAttribute("class", "book-card-buttons");
 
     let toggleReadStatus = document.createElement("button");
-    bookCard.appendChild(toggleReadStatus);
+    bookCardButtons.appendChild(toggleReadStatus);
     toggleReadStatus.textContent = "Read";
+    toggleReadStatus.setAttribute("class", "toggle-status");
     toggleReadStatus.addEventListener("click", function () {
       toggleRead(i);
+    });
+
+    let bookCardRemove = document.createElement("button");
+    bookCardButtons.appendChild(bookCardRemove);
+    bookCardRemove.textContent = "Remove";
+    bookCardRemove.setAttribute("class", "remove-book");
+    bookCardRemove.addEventListener("click", function () {
+      removeBook(i);
     });
   }
 }
