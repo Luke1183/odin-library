@@ -115,6 +115,36 @@ body {
     cursor: pointer;
 }
 
+#add-book:active {
+    background-color: rgb(29, 198, 255);
+    cursor: pointer;
+}
+
+#remove-all:active {
+    background-color: rgb(255, 61, 61);
+    cursor: pointer;
+}
+
+#confirm-book:active {
+    background-color: rgb(66, 219, 0);
+    cursor: pointer;
+}
+
+#cancel-book:active {
+    background-color: rgb(255, 61, 61);
+    cursor: pointer;
+}
+
+.remove-book:active {
+    background-color: rgb(255, 61, 61);
+    cursor: pointer;
+}
+
+.toggle-status:active {
+    background-color: rgb(187, 220, 0);
+    cursor: pointer;
+}
+
 .book-card-buttons {
     display: grid;
     grid-template-columns: 5rem 1fr 5rem;
